@@ -25,6 +25,11 @@ def test_mean_attack_type(data):
 def test_count_types(data):
     print(hw2_manual.count_types(data))
 
+def test_highest_stage_per_type(data):
+    print(hw2_manual.highest_stage_per_type(data))
+
+def test_mean_attack_per_type(data):
+    print(hw2_manual.mean_attack_per_type(data))
 
 def main():
     data = hw2_manual.parse('pokemon_test.csv', ['id','level','atk','def','hp','stage'])
@@ -33,7 +38,8 @@ def main():
     # test_parse()
     # test_species_count()
     # test_mean_attack_type(data)
-    test_count_types(data)
+    test_highest_stage_per_type(data)
+    test_mean_attack_per_type(data)
 
 # This file is left blank for you to fill in with your tests!
 if __name__ =='__main__':

@@ -80,3 +80,26 @@ def count_types(data):
         else:
             types[pokemon_type] = count
     return types
+
+def highest_stage_per_type(data):
+    highest_stage_per_types = {}
+    for dict in data:
+        pokemon_type = dict.get('type')
+        if (pokemon_type not in highest_stage_per_types):
+            pokemon_stage = dict.get('stage')
+            highest_stage_per_types[pokemon_type] = pokemon_stage
+        else:
+            current_stage = highest_stage_per_types.get(pokemon_type)
+            pokemon_stage = dict.get('stage')
+            if (current_stage < pokemon_stage):
+                highest_stage_per_types[pokemon_type] = pokemon_stage 
+    return highest_stage_per_types
+
+def mean_attack_per_type(data):
+    mean_atk_per_type = {}
+    for dict in data:
+        pokemon_type = dict.get('type')
+        mean_atk = mean_attack_for_type(data, pokemon_type)
+        if (pokemon_type not in mean_atk_per_type):
+            mean_atk_per_type[pokemon_type] = mean_atk
+    return mean_atk_per_type
